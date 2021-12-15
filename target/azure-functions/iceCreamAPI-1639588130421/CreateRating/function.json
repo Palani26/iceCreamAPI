@@ -1,0 +1,22 @@
+{
+  "scriptFile" : "../iceCreamAPI-1.0-SNAPSHOT.jar",
+  "entryPoint" : "com.function.Ratings.run",
+  "bindings" : [ {
+    "type" : "httpTrigger",
+    "direction" : "in",
+    "name" : "req",
+    "methods" : [ "GET", "POST" ],
+    "authLevel" : "ANONYMOUS"
+  }, {
+    "type" : "cosmosDB",
+    "direction" : "out",
+    "name" : "database",
+    "databaseName" : "ToDoList",
+    "connectionStringSetting" : "Cosmos_DB_Connection_String",
+    "collectionName" : "Items"
+  }, {
+    "type" : "http",
+    "direction" : "out",
+    "name" : "$return"
+  } ]
+}
