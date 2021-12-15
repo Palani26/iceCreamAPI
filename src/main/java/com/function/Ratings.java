@@ -120,7 +120,7 @@ public class Ratings {
 
                 // Convert and display
                 if (item == null || item.length == 0) {
-                        return request.createResponseBuilder(HttpStatus.BAD_REQUEST)
+                        return request.createResponseBuilder(HttpStatus.NOT_FOUND)
                                         .body("Document not found.")
                                         .build();
                 } else {
@@ -144,7 +144,7 @@ public class Ratings {
 
                 // Convert and display
                 if (null == ratings || ratings.length == 0) {
-                        return request.createResponseBuilder(HttpStatus.BAD_REQUEST)
+                        return request.createResponseBuilder(HttpStatus.NOT_FOUND)
                                         .body("Document not found.")
                                         .build();
                 } else {
