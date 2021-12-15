@@ -40,15 +40,15 @@ public class Ratings {
               authLevel = AuthorizationLevel.ANONYMOUS)
             HttpRequestMessage<Optional<String>> request,
             @CosmosDBOutput(name = "database",
-              databaseName = "ToDoList",
-              collectionName = "Items",
+              databaseName = "icreamratings",
+              collectionName = "icecreamratingscontainer",
               connectionStringSetting = "Cosmos_DB_Connection_String")
             OutputBinding<String> outputItem,
             final ExecutionContext context) {
 
         // Parse query parameter
-        String query = request.getQueryParameters().get("input");
-        String body = request.getBody().orElse(query);
+        
+        String body = request.getBody().orElse("");
 
         if(null!=body){
 
@@ -57,7 +57,7 @@ public class Ratings {
         String userId = jsonObject.getString("userId");
         String productId = jsonObject.getString("productId");
         String locationName = jsonObject.getString("locationName");
-        String rating = jsonObject.getString("rating");
+        Integer rating = jsonObject.getInt("rating");
         String userNotes = jsonObject.getString("userNotes");
 
         // Item list
