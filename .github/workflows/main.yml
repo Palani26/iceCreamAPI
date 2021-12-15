@@ -13,7 +13,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: icecreamratingsteam2      # set this to your function app name on Azure
   POM_XML_DIRECTORY: '.'                     # set this to the directory which contains pom.xml file
-  POM_FUNCTIONAPP_NAME: icecreamratingsteam2        # set this to the function app name in your local development environment
+  POM_FUNCTIONAPP_NAME: iceCreamAPI-1639588130421      # set this to the function app name in your local development environment
   JAVA_VERSION: '1.11.x'                      # set this to the dotnet version to use
 
 jobs:
