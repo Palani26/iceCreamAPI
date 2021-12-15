@@ -1,18 +1,19 @@
 {
   "scriptFile" : "../iceCreamAPI-1.0-SNAPSHOT.jar",
-  "entryPoint" : "com.function.Ratings.createRating",
+  "entryPoint" : "com.function.Ratings.getRatings",
   "bindings" : [ {
     "type" : "httpTrigger",
     "direction" : "in",
     "name" : "req",
-    "route" : "ratings",
-    "methods" : [ "POST" ],
+    "route" : "ratings/user/{userId}",
+    "methods" : [ "GET" ],
     "authLevel" : "ANONYMOUS"
   }, {
     "type" : "cosmosDB",
-    "direction" : "out",
+    "direction" : "in",
     "name" : "database",
     "databaseName" : "icreamratings",
+    "sqlQuery" : "select * from icecreamratingscontainer r where r.userId = {userId}",
     "connectionStringSetting" : "Cosmos_DB_Connection_String",
     "collectionName" : "icecreamratingscontainer"
   }, {
